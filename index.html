@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230206142633">
+    <title>Калькулятор обмена:</title>
+</head>
+
+<body>
+    <main class="page">
+        <section class="page__exchange exchange">
+            <div class="exchange__container container">
+                <div class="exchange__row">
+                    <div class="exchange__column">
+                        <div class="exchange__info info-exchange">
+                            <div class="info-exchange__top">
+                                <h2 class="info-exchange__title">Сегодня меняем по следующему курсу:</h2>
+                                <div class="info-exchange__today-course today-course">
+                                    <ul class="today-course__list">
+                                        <li class="today-course__item">4,80 до 30 000 руб</li>
+                                        <li class="today-course__item">4,83 от 30 000 руб до 50 000 руб</li>
+                                        <li class="today-course__item">4,85 от 50 000 руб до 100 000 руб</li>
+                                        <li class="today-course__item">4,90 от 100 000 руб</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-exchange__text">Курс обмена более крупных сумм по запросу</div>
+                            <div class="info-exchange__others-courses others-courses">
+                                <ul class="others-courses__list">
+                                    <li class="others-courses__item others-courses__item_rub">курс 4.20
+                                        <span>НАЛИЧНЫЕ</span> рубли
+                                    </li>
+                                    <li class="others-courses__item others-courses__item_usdt">USDT от 345 - 355 рупии;
+                                    </li>
+                                    <li class="others-courses__item others-courses__item_dollar">Продаем доллары по 76
+                                        рублей;</li>
+                                    <li class="others-courses__item others-courses__item_uah">8.90 любая сумма </li>
+                                    <li class="others-courses__item others-courses__item_rs">Меняем рупии на рубли,
+                                        запрос курса в личном
+                                        сообщении.</li>
+                                </ul>
+                            </div>
+                            <div class="info-exchange__bottom">
+                                Точный курс зависит от Вашей суммы заявки. Вы можете уточнить при
+                                оформлении заявки.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exchange__column">
+                        <div class="exchange__calculator calculator">
+                            <div class="calculator__body">
+                                <form action="#" class="calculator__form form-calculator">
+                                    <div class="form-calculator__top">
+
+                                        <h2 class="form-calculator__title">Калькулятор обмена:</h2>
+                                        Вы отдаете:
+                                        <div class="form-calculator__label">
+                                            <input autocomplete='off' type='text' name='form[]' data-value=''
+                                                class='input'>
+                                            <div
+                                                class="form-calculator__select-wrapper form-calculator__select-wrapper_first">
+                                                <select class="select" name="first_course" id="first_course">
+                                                    <option selected value="rub">
+                                                        <span>Rub Банк-Онлайн</span>
+                                                    </option>
+                                                    <option value="usdt">
+                                                        <span>usdt</span>
+                                                    </option>
+                                                    <option value="dollar">
+                                                        <span>dollar</span>
+                                                    </option>
+                                                    <option value="uah">
+                                                        <span>uah</span>
+                                                    </option>
+                                                    <option value="rs">
+                                                        <span>LKR Нал. рупии</span>
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        Получаете:
+                                        <div class="form-calculator__label">
+                                            <input autocomplete='off' type='text' name='form[]' data-value=''
+                                                class='input'>
+                                            <div
+                                                class="form-calculator__select-wrapper form-calculator__select-wrapper_second">
+                                                <select class="select" name="second_course" id="second_course">
+                                                    <option value="rub">
+                                                        <span>Rub Банк-Онлайн</span>
+                                                    </option>
+                                                    <option value="usdt">
+                                                        <span>usdt</span>
+                                                    </option>
+                                                    <option value="dollar">
+                                                        <span>dollar</span>
+                                                    </option>
+                                                    <option value="uah">
+                                                        <span>uah</span>
+                                                    </option>
+                                                    <option selected value="rs">
+                                                        <span>LKR Нал. рупии</span>
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-calculator__course">Курс обмена: 1 RUB = 4,80 рупии</div>
+                                    </div>
+                                    <div class="form-calculator__bottom">
+                                        <div class="form-calculator__promo-code">
+                                            Введите промокод:
+                                            <input autocomplete='off' type='text' name='form[]' data-value=''
+                                                class='input'>
+                                        </div>
+                                        Контактный телефон:
+                                        <div class="form-calculator__phone">
+                                            <input autocomplete='off' type='tel' name='form[]'
+                                                placeholder="+7 (945) 123 45 67"
+                                                class='input input__phone art-stranger'>
+                                            <button type='submit' class='btn'>Начать обмен</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="calculator__bottom">
+                                При обмене суммы менее 10 000 бат применяется более высокий
+                                обменный курс
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js?_v=20230206142633"></script>
+    <script src="js/app.min.js?_v=20230206142633"></script>
+    <script>
+        $('.art-stranger').mask('+7 (999) 999-99-99');
+
+        $.fn.setCursorPosition = function (pos) {
+            if ($(this).get(0).setSelectionRange) {
+                $(this).get(0).setSelectionRange(pos, pos);
+            } else if ($(this).get(0).createTextRange) {
+                var range = $(this).get(0).createTextRange();
+                range.collapse(true);
+                range.moveEnd('character', pos);
+                range.moveStart('character', pos);
+                range.select();
+            }
+        };
+
+
+        $('input[type="tel"]').click(function () {
+            $(this).setCursorPosition(4);  // set position number
+        });
+    </script>
+</body>
+
+</html>
