@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230206151800">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230206155733">
     <title>Калькулятор обмена:</title>
 </head>
 
@@ -62,8 +62,11 @@
                                             <div
                                                 class="form-calculator__select-wrapper form-calculator__select-wrapper_first">
                                                 <select class="select" name="first_course" id="first_course">
-                                                    <option selected value="rub">
+                                                    <option selected value="rub_online">
                                                         <span>Rub Банк-Онлайн</span>
+                                                    </option>
+                                                    <option value="rub_nal">
+                                                        <span>Rub Наличные</span>
                                                     </option>
                                                     <option value="usdt">
                                                         <span>usdt</span>
@@ -87,8 +90,11 @@
                                             <div
                                                 class="form-calculator__select-wrapper form-calculator__select-wrapper_second">
                                                 <select class="select" name="second_course" id="second_course">
-                                                    <option value="rub">
+                                                    <option selected value="rub_online">
                                                         <span>Rub Банк-Онлайн</span>
+                                                    </option>
+                                                    <option selected value="rub_nal">
+                                                        <span>Rub Наличные</span>
                                                     </option>
                                                     <option value="usdt">
                                                         <span>usdt</span>
@@ -133,8 +139,8 @@
             </div>
         </section>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js?_v=20230206151800"></script>
-    <script src="js/app.min.js?_v=20230206151800"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js?_v=20230206155733"></script>
+    <script src="js/app.min.js?_v=20230206155733"></script>
     <script>
         $('.art-stranger').mask('+7 (999) 999-99-99');
 

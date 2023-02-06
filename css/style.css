@@ -163,12 +163,6 @@ body.lock {
   padding: 0 15px;
 }
 
-.exchange__calculator {
-  -webkit-transform: translate(0, 50px);
-      -ms-transform: translate(0, 50px);
-          transform: translate(0, 50px);
-}
-
 .info-exchange {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
@@ -318,7 +312,7 @@ body.lock {
 }
 
 .form-calculator__top:not(:last-child) {
-  margin: 0 0 13px 0;
+  margin: 0 0 35px 0;
 }
 
 .form-calculator__title {
@@ -358,7 +352,10 @@ body.lock {
   border-radius: 50%;
 }
 
-.no-webp .form-calculator__select-wrapper.rub::before {
+.no-webp .form-calculator__select-wrapper.rub_online::before {
+  background: url("../img/icons/rub.png") center no-repeat; }
+
+.no-webp .form-calculator__select-wrapper.rub_nal::before {
   background: url("../img/icons/rub.png") center no-repeat; }
 
 .no-webp .form-calculator__select-wrapper.usdt::before {
@@ -560,7 +557,9 @@ body.lock {
 
 .webp .others-courses__item_rs::before { background: url(../img/icons/rs.webp) center no-repeat; }
 
-.webp .form-calculator__select-wrapper.rub::before { background: url(../img/icons/rub.webp) center no-repeat; }
+.webp .form-calculator__select-wrapper.rub_online::before { background: url(../img/icons/rub.webp) center no-repeat; }
+
+.webp .form-calculator__select-wrapper.rub_nal::before { background: url(../img/icons/rub.webp) center no-repeat; }
 
 .webp .form-calculator__select-wrapper.usdt::before { background: url(../img/icons/usdt.webp) center no-repeat; }
 
