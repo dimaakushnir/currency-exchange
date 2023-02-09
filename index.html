@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230206170340">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230208120605">
     <title>Калькулятор обмена:</title>
 </head>
 
@@ -19,24 +19,41 @@
                                 <h2 class="info-exchange__title">Сегодня меняем по следующему курсу:</h2>
                                 <div class="info-exchange__today-course today-course">
                                     <ul class="today-course__list">
-                                        <li class="today-course__item">4,80 до 30 000 руб</li>
-                                        <li class="today-course__item">4,83 от 30 000 руб до 50 000 руб</li>
-                                        <li class="today-course__item">4,85 от 50 000 руб до 100 000 руб</li>
-                                        <li class="today-course__item">4,90 от 100 000 руб</li>
+                                        <li class="today-course__item">
+                                            <span class="course-today-rub-online-1">4.80</span>
+                                            до 30000 руб
+                                        </li>
+                                        <li class="today-course__item">
+                                            <span class="course-today-rub-online-2">4.83</span>
+                                            от 30 000 руб до 50 000 руб
+                                        </li>
+                                        <li class="today-course__item">
+                                            <span class="course-today-rub-online-3">4.85</span>
+                                            от 50 000 руб до 100 000 руб
+                                        </li>
+                                        <li class="today-course__item">
+                                            <span class="course-today-rub-online-4">4.9</span>
+                                            от 100 000 руб
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="info-exchange__text">Курс обмена более крупных сумм по запросу</div>
                             <div class="info-exchange__others-courses others-courses">
                                 <ul class="others-courses__list">
-                                    <li class="others-courses__item others-courses__item_rub">курс 4.20
-                                        <span>НАЛИЧНЫЕ</span> рубли
+                                    <li class="others-courses__item others-courses__item_rub">курс <span
+                                            class="course-today-rub-nal">4.20</span>
+                                        <span class="fatty">НАЛИЧНЫЕ</span> рубли
                                     </li>
-                                    <li class="others-courses__item others-courses__item_usdt">USDT от 345 - 355 рупии;
+                                    <li class="others-courses__item others-courses__item_usdt">USDT от <span
+                                            class="course-today-usdt">345</span> - 355 рупии;
                                     </li>
-                                    <li class="others-courses__item others-courses__item_dollar">Продаем доллары по 76
-                                        рублей;</li>
-                                    <li class="others-courses__item others-courses__item_uah">8.90 любая сумма </li>
+                                    <li class="others-courses__item others-courses__item_dollar">Продаем доллары по
+                                        <span class="course-today-dollar">76</span>
+                                        рублей;
+                                    </li>
+                                    <li class="others-courses__item others-courses__item_uah"><span
+                                            class="course-today-uah">8.9</span> любая сумма </li>
                                     <li class="others-courses__item others-courses__item_rs">Меняем рупии на рубли,
                                         запрос курса в личном
                                         сообщении.</li>
@@ -53,7 +70,6 @@
                             <div class="calculator__body">
                                 <form action="#" class="calculator__form form-calculator">
                                     <div class="form-calculator__top">
-
                                         <h2 class="form-calculator__title">Калькулятор обмена:</h2>
                                         Вы отдаете:
                                         <div class="form-calculator__label">
@@ -139,8 +155,8 @@
             </div>
         </section>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js?_v=20230206170340"></script>
-    <script src="js/app.min.js?_v=20230206170340"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js?_v=20230208120605"></script>
+    <script src="js/app.min.js?_v=20230208120605"></script>
     <script>
         $('.art-stranger').mask('+7 (999) 999-99-99');
 

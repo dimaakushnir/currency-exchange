@@ -114,6 +114,7 @@ h6 {
 }
 
 body {
+  background-color: #FFE4BD;
   color: #000;
   font-size: 14px;
 }
@@ -130,8 +131,6 @@ body.lock {
 }
 
 .page {
-  background-color: #FFE4BD;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,18 +141,11 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
 .page__exchange {
   width: 100%;
-}
-
-.exchange__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0;
-  margin: 0 -15px;
 }
 
 .exchange__column {
@@ -264,9 +256,9 @@ body.lock {
   overflow: hidden;
 }
 
-.others-courses__item span {
+.others-courses__item .fatty {
   font-weight: 600;
-  margin: 0 5px;
+  margin: 0 3px;
 }
 
 .no-webp .others-courses__item_rub::before {
@@ -309,10 +301,11 @@ body.lock {
 
 .form-calculator__top {
   border-bottom: 1px dashed #454545;
+  padding: 0 0 17.5px 0;
 }
 
 .form-calculator__top:not(:last-child) {
-  margin: 0 0 35px 0;
+  margin: 0 0 17.5px 0;
 }
 
 .form-calculator__title {
@@ -417,13 +410,6 @@ body.lock {
 }
 
 .form-calculator__phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
 }
 
@@ -480,6 +466,7 @@ body.lock {
       -ms-flex: 0 0 223px;
           flex: 0 0 223px;
   width: 223px;
+  height: 51px;
   padding: 14px 40px 14px 46px;
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
@@ -520,15 +507,64 @@ body.lock {
   -webkit-transition: all 0.3 ease 0s;
   -o-transition: all 0.3 ease 0s;
   transition: all 0.3 ease 0s;
+  position: relative;
+}
+
+.no-webp .btn::before {
+  background: url("../img/icons/rub.png") center no-repeat; }
+
+.btn::before {
+  position: absolute;
+  content: "";
+  left: 16px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .btn:hover {
   background: #e1503a;
 }
 
+@media (min-width: 600px) {
+  .form-calculator__phone {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 1152px) {
+  .exchange__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0;
+    margin: 0 -15px;
+  }
+}
+
 @media (max-width: 1152px) {
   .container {
     max-width: 970px;
+  }
+
+  .page {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .exchange__column {
+    padding: 0;
+  }
+
+  .exchange__column:not(:last-child) {
+    margin: 0 0 50px 0;
   }
 }
 
@@ -542,6 +578,68 @@ body.lock {
   .container {
     max-width: none;
     padding: 0 10px;
+  }
+
+  .form-calculator__select-wrapper::before {
+    left: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-calculator__promo-code {
+    display: block;
+  }
+
+  .form-calculator__promo-code input {
+    margin: 0;
+  }
+
+  .form-calculator__phone::before {
+    top: 13px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .input:not(:last-child) {
+    margin: 0 0 15px 0;
+  }
+
+  .btn {
+    padding: 5px 0 5px 26%;
+    width: 76.9%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .info-exchange__top {
+    padding: 12px 7.5px 20px 7.5px;
+  }
+
+  .others-courses {
+    padding: 12px 7.5px 20px 7.5px;
+  }
+
+  .form-calculator {
+    padding: 12px 7.5px 21px 7.5px;
+  }
+
+  .form-calculator__select-wrapper {
+    margin: 0 0 0 10px;
+  }
+
+  .form-calculator__select-wrapper::after {
+    right: 7px;
+  }
+
+  .select {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 195px;
+            flex: 0 0 195px;
+    width: 195px;
+    padding: 14px 28px 14px 33px;
   }
 }
 
@@ -572,3 +670,5 @@ body.lock {
 .webp .form-calculator__select-wrapper::after { background: url(../img/icons/arrow.webp); }
 
 .webp .form-calculator__phone::before { background: url(../img/icons/rub.webp) center no-repeat; }
+
+.webp .btn::before { background: url(../img/icons/rub.webp) center no-repeat; }
