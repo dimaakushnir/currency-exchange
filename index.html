@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230208120605">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230212103513">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css?_v=20230212103513" />
     <title>Калькулятор обмена:</title>
 </head>
 
@@ -49,7 +50,7 @@
                                             class="course-today-usdt">345</span> - 355 рупии;
                                     </li>
                                     <li class="others-courses__item others-courses__item_dollar">Продаем доллары по
-                                        <span class="course-today-dollar">76</span>
+                                        <span class="course-today-dollar">77</span>
                                         рублей;
                                     </li>
                                     <li class="others-courses__item others-courses__item_uah"><span
@@ -73,8 +74,11 @@
                                         <h2 class="form-calculator__title">Калькулятор обмена:</h2>
                                         Вы отдаете:
                                         <div class="form-calculator__label">
-                                            <input autocomplete='off' type='text' name='num' data-value=''
-                                                class='input input-num'>
+                                            <div class="form-calculator__label_input">
+                                                <input autocomplete='off' type='text' name='num' data-value=''
+                                                    class='input input-num'>
+                                                <span class="error error-input">Заполните поле</span>
+                                            </div>
                                             <div
                                                 class="form-calculator__select-wrapper form-calculator__select-wrapper_first">
                                                 <select class="select" name="first_course" id="first_course">
@@ -84,17 +88,14 @@
                                                     <option value="rub_nal">
                                                         <span>Rub Наличные</span>
                                                     </option>
-                                                    <option value="usdt">
+                                                    <option value="usdt" class="option-usdt-first">
                                                         <span>usdt</span>
                                                     </option>
-                                                    <option value="dollar">
+                                                    <option value="dollar" class="option-dollar-first">
                                                         <span>dollar</span>
                                                     </option>
-                                                    <option value="uah">
+                                                    <option value="uah" class="option-uah">
                                                         <span>uah</span>
-                                                    </option>
-                                                    <option value="rs">
-                                                        <span>LKR Нал. рупии</span>
                                                     </option>
                                                 </select>
                                             </div>
@@ -106,22 +107,13 @@
                                             <div
                                                 class="form-calculator__select-wrapper form-calculator__select-wrapper_second">
                                                 <select class="select" name="second_course" id="second_course">
-                                                    <option selected value="rub_online">
-                                                        <span>Rub Банк-Онлайн</span>
-                                                    </option>
-                                                    <option selected value="rub_nal">
-                                                        <span>Rub Наличные</span>
-                                                    </option>
-                                                    <option value="usdt">
+                                                    <option class="option-usdt" value="usdt">
                                                         <span>usdt</span>
                                                     </option>
-                                                    <option value="dollar">
+                                                    <option class="option-dollar" value="dollar">
                                                         <span>dollar</span>
                                                     </option>
-                                                    <option value="uah">
-                                                        <span>uah</span>
-                                                    </option>
-                                                    <option selected value="rs">
+                                                    <option class="option-rs" selected value="rs">
                                                         <span>LKR Нал. рупии</span>
                                                     </option>
                                                 </select>
@@ -136,11 +128,31 @@
                                                 class='input'>
                                         </div>
                                         Контактный телефон:
-                                        <div class="form-calculator__phone">
-                                            <input autocomplete='off' type='tel' name='phone'
-                                                placeholder="+7 (945) 123 45 67"
-                                                class='input input__phone art-stranger'>
-                                            <button type='submit' class='btn submit'>Начать обмен</button>
+                                        <div class="form-calculator__phone phone-form-calculator">
+                                            <div class="phone-form-calculator__input">
+                                                <input id="phone" autocomplete='off' type='tel' name='phone'
+                                                    class='input input__phone art-stranger'>
+                                                <select class="phone-form-calculator__select" name="" id="">
+                                                    <option selected value="whatsapp">
+                                                        <span>WhatsApp</span>
+                                                    </option>
+                                                    <option value="telegram">
+                                                        <span>Telegram</span>
+                                                    </option>
+                                                    <option value="none">
+                                                        <span>Ничего не выбрано</span>
+                                                    </option>
+                                                </select>
+                                                <span class="phone-form-calculator__arrow">
+                                                    <picture><source srcset="img/icons/arrow.webp" type="image/webp"><img src="img/icons/arrow.png" alt=""></picture>
+                                                </span>
+                                                <span class="error error-tel">Заполните поле для номера правильно</span>
+                                                <span class="error error-social">Выберите социальную сеть</span>
+                                            </div>
+                                            <div class="phone-form-calculator__btn">
+                                                <button type='submit' class='btn submit'>Начать обмен</button>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </form>
@@ -155,28 +167,9 @@
             </div>
         </section>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js?_v=20230208120605"></script>
-    <script src="js/app.min.js?_v=20230208120605"></script>
-    <script>
-        $('.art-stranger').mask('+7 (999) 999-99-99');
-
-        $.fn.setCursorPosition = function (pos) {
-            if ($(this).get(0).setSelectionRange) {
-                $(this).get(0).setSelectionRange(pos, pos);
-            } else if ($(this).get(0).createTextRange) {
-                var range = $(this).get(0).createTextRange();
-                range.collapse(true);
-                range.moveEnd('character', pos);
-                range.moveStart('character', pos);
-                range.select();
-            }
-        };
-
-
-        $('input[type="tel"]').click(function () {
-            $(this).setCursorPosition(4);  // set position number
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js?_v=20230212103513"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js?_v=20230212103513"></script>
+    <script src="js/app.min.js?_v=20230212103513"></script>
 </body>
 
 </html>

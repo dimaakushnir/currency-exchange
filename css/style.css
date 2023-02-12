@@ -293,7 +293,7 @@ body.lock {
 }
 
 .form-calculator {
-  padding: 12px 17px 21px 18px;
+  padding: 12px 17px 0 18px;
   font-size: 16px;
   line-height: 218.75%;
   color: #454545;
@@ -328,6 +328,17 @@ body.lock {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 0 6px 0;
+}
+
+.form-calculator__label_input {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
 }
 
 .form-calculator__select-wrapper {
@@ -409,23 +420,103 @@ body.lock {
   margin: 0 0 0 15px;
 }
 
-.form-calculator__phone {
+.phone-form-calculator__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0 0 21px 0;
   position: relative;
 }
 
-.no-webp .form-calculator__phone::before {
+.no-webp .phone-form-calculator__input::before {
   background: url("../img/icons/rub.png") center no-repeat; }
 
-.form-calculator__phone::before {
+.phone-form-calculator__input::before {
   position: absolute;
   content: "";
   width: 23px;
   height: 23px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   left: 16px;
   border-radius: 50%;
   overflow: hidden;
   -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+}
+
+.phone-form-calculator__input::after {
+  position: absolute;
+  content: "";
+  -webkit-transform: translate(0, 37%);
+      -ms-transform: translate(0, 37%);
+          transform: translate(0, 37%);
+  top: 0;
+  right: 32px;
+  width: 28.75px;
+  height: 28.75px;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+}
+
+.no-webp .phone-form-calculator__input.whatsapp::after {
+  background: url("../img/icons/whatsapp.png") center no-repeat; }
+
+.phone-form-calculator__input.whatsapp::after {
+  background-size: 80%;
+}
+
+.no-webp .phone-form-calculator__input.telegram::after {
+  background: url("../img/icons/telegram.png") center no-repeat; }
+
+.no-webp .phone-form-calculator__input.none::after {
+  background: url("../img/icons/none.png") center no-repeat; }
+
+.phone-form-calculator__btn {
+  padding: 0 0 21px 0;
+}
+
+.phone-form-calculator__select {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 70px;
+  height: 49px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0 70px 0 0;
+  cursor: pointer;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 23px;
+          flex: 0 0 23px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.phone-form-calculator__select::-ms-expand {
+  display: none;
+}
+
+.phone-form-calculator__arrow {
+  position: absolute;
+  width: 19px;
+  height: 12px;
+  top: 19px;
+  right: 7px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.phone-form-calculator__arrow.active {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .input {
@@ -449,7 +540,8 @@ body.lock {
 }
 
 .input__phone {
-  padding: 10px 16px 10px 67px;
+  width: 100%;
+  padding: 10px 16px 10px 67px !important;
 }
 
 .input__phone:valid {
@@ -527,6 +619,51 @@ body.lock {
   background: #e1503a;
 }
 
+.iti {
+  display: block !important;
+}
+
+.no-webp .iti__arrow {
+  background: url("../img/icons/arrow.png") center no-repeat; }
+
+.iti__arrow {
+  width: 19px !important;
+  height: 12px !important;
+  border: none !important;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.iti__arrow.iti__arrow--up {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.error {
+  display: none;
+  white-space: nowrap;
+  position: absolute;
+  font-size: 14px;
+  color: red;
+  left: 0;
+  bottom: -5px;
+}
+
+.error-tel.active {
+  display: block;
+}
+
+.error-social.active {
+  display: block;
+}
+
+.error-input.active {
+  display: block;
+  bottom: -25px;
+}
+
 @media (min-width: 600px) {
   .form-calculator__phone {
     display: -webkit-box;
@@ -594,8 +731,8 @@ body.lock {
     margin: 0;
   }
 
-  .form-calculator__phone::before {
-    top: 13px;
+  .phone-form-calculator__input:not(:last-child) {
+    margin: 0 0 15px 0;
   }
 
   .input {
@@ -610,6 +747,10 @@ body.lock {
     padding: 5px 0 5px 26%;
     width: 76.9%;
     margin: 0 auto;
+  }
+
+  .error-input.active {
+    bottom: -10px;
   }
 }
 
@@ -669,6 +810,14 @@ body.lock {
 
 .webp .form-calculator__select-wrapper::after { background: url(../img/icons/arrow.webp); }
 
-.webp .form-calculator__phone::before { background: url(../img/icons/rub.webp) center no-repeat; }
+.webp .phone-form-calculator__input::before { background: url(../img/icons/rub.webp) center no-repeat; }
+
+.webp .phone-form-calculator__input.whatsapp::after { background: url(../img/icons/whatsapp.webp) center no-repeat; }
+
+.webp .phone-form-calculator__input.telegram::after { background: url(../img/icons/telegram.webp) center no-repeat; }
+
+.webp .phone-form-calculator__input.none::after { background: url(../img/icons/none.webp) center no-repeat; }
 
 .webp .btn::before { background: url(../img/icons/rub.webp) center no-repeat; }
+
+.webp .iti__arrow { background: url(../img/icons/arrow.webp) center no-repeat; }
